@@ -9,14 +9,14 @@ VALUES (1, 'Eva Stanley', '3700059977', 'sebastianguerra@ymail.com', TRUE),
 (8, 'Leroy Hart', '7423238090', 'jaycereynolds@inbox.com', FALSE);
 
 INSERT INTO products (id, user_id, name, price, description, thumbnail_photo, sold_date)
-VALUES (1, 2, 'scandinavian', 50000, 'description', "https://image.shutterstock.com/image-photo/green-plant-on-scandinavian-cabinet-600w-1132477883.jpg", null),
-(2, 2, 'illustration', 'description', 40000, 'https://image.shutterstock.com/image-illustration/space-canvas-on-wall-living-600w-315041414.jpg', null),
-(3, 1, 'minimalist', 'description', 30000, 'https://image.shutterstock.com/image-illustration/white-minimalist-living-room-interior-600w-1729593625.jpg', null),
-(4, 2, 'white', 'description',10000, 'https://image.shutterstock.com/image-illustration/white-living-room-sofa-scandinavian-600w-1672306783.jpg', null),
-(5, 2, 'green', 'description', 30000, 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1547539412.jpg', null),
-(6, 2, 'pink', 'description', 60000, 'https://image.shutterstock.com/image-illustration/blue-minimalist-living-room-interior-600w-1702134031.jpg', null),
-(7, 1, 'overprice', 'description', 80000, 'https://image.shutterstock.com/image-illustration/interior-living-room-3d-illustration-600w-1315113887.jpg', null),
-(8, 2, 'orange', 'description', 20000, 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1545671903.jpg', '2021-09-05');
+VALUES (1, 2, 'scandinavian', 50000, 'description', 'https://image.shutterstock.com/image-photo/green-plant-on-scandinavian-cabinet-600w-1132477883.jpg', null),
+(2, 2, 'illustration', 40000, 'description', 'https://image.shutterstock.com/image-illustration/space-canvas-on-wall-living-600w-315041414.jpg', null),
+(3, 1, 'minimalist', 30000, 'description', 'https://image.shutterstock.com/image-illustration/white-minimalist-living-room-interior-600w-1729593625.jpg', null),
+(4, 2, 'white', 10000, 'description', 'https://image.shutterstock.com/image-illustration/white-living-room-sofa-scandinavian-600w-1672306783.jpg', null),
+(5, 2, 'green', 30000, 'description', 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1547539412.jpg', null),
+(6, 2, 'pink', 60000, 'description', 'https://image.shutterstock.com/image-illustration/blue-minimalist-living-room-interior-600w-1702134031.jpg', null),
+(7, 1, 'overprice', 80000, 'description', 'https://image.shutterstock.com/image-illustration/interior-living-room-3d-illustration-600w-1315113887.jpg', null),
+(8, 2, 'orange', 20000, 'description', 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1545671903.jpg', '2021-09-05');
 
 INSERT INTO messages (message, from_user_id, to_user_id, product_id)
 VALUES ('messages', 5, 2, 8),
