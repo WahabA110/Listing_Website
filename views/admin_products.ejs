@@ -11,12 +11,28 @@
 <body>
 
   <% for (item of products) { %>
+    <div>
+
+      <h3 class="item--name">
+        <%= item.name %>
+      </h3>
+
+      <p class="item--desc">
+        <img class="item--img" src=" <%= item.thumbnail_photo %> ">
+        <%= item.description %>
+          <span class="item--price">
+            <%= item.price %>
+          </span>
+      </p>
+
+    </div>
+
     <form method="POST" action="/admin/products/<%= item.id %>">
-      <%= item.name %>
-        <%= item.price %>
-          <%= item.description %>
-            <img src=" <%= item.thumbnail_photo %> ">
-            <button type="submit">Delete</button>
+      <button type="submit">Sold</button>
+    </form>
+
+    <form method="POST" action="/admin/products/<%= item.id %>">
+      <button type="submit">Delete</button>
     </form>
     <% } %>
 

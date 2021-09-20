@@ -16,12 +16,30 @@
   <h1>Welcome to our listing website</h1>
 
   <% for (item of products) { %>
-    <form>
-      <%= item.name %>
-        <%= item.price %>
+    <div>
+      <h2 class="item--title">
+        <%= item.name %>
+      </h2>
+      <div>
+        <img class="item--img" src=" <%= item.thumbnail_photo %> ">
+        <p class="item--desc">
           <%= item.description %>
-            <img src=" <%= item.thumbnail_photo %> ">
-    </form>
+        </p>
+        <span class="item--price">
+          <%= item.price %>
+        </span>
+      </div>
+
+      <form method="POST" action="/messages">
+        <button type="submit">Message Owner</button>
+      </form>
+
+      <form action="/favorites" method="post">
+        <button type="submit">Favorite</button>
+      </form>
+
+    </div>
+
     <% } %>
 </body>
 
