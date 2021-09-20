@@ -2,18 +2,14 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
-
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Favorites</title>
 </head>
 
 <body>
-  <h1>Welcome to our listing website</h1>
+  <h1>Your Favorites</h1>
 
   <% for (item of products) { %>
     <div>
@@ -34,13 +30,14 @@
         <button type="submit">Message Owner</button>
       </form>
 
-      <form action="/favorites" method="post">
-        <button type="submit">Favorite</button>
+      <form action="/delete" method="post">
+        <button type="submit">Remove</button>
       </form>
 
     </div>
 
     <% } %>
+
 </body>
 
 </html>
