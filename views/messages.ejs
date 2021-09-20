@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+</head>
+
+<body>
+  <h1>All Messages</h1>
+
+  <!-- hide form with jquery -->
+  <div class="reply-form">
+    <form action="/messages" method="POST">
+      <input type="hidden" name="to_user_id">
+      <input type="text" name="text">
+      <button type="submit">Reply</button>
+      <button type="button">Cancel</button>
+    </form>
+  </div>
+
+  <% for (message of messages) { %>
+    <div>
+      <h3 class="item--name">
+        To: <%= message.to %>
+      </h3>
+      <h3>
+        From: <%= message.from %>
+      </h3>
+
+      <p>
+        <%= message.message %>
+      </p>
+
+      <input type="hidden" value="<%= message.from %>">
+      <button class="reply" type="button">Reply</button>
+    </div>
+    <% } %>
+
+</body>
+
+</html>
