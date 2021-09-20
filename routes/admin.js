@@ -44,15 +44,14 @@ module.exports = (db) => {
     const queryString = `SELECT * FROM products`;
 
     db.query(queryString)
-    .then(data => {
-      const product = data.rows;
-      console.log(product);
-      const templateVars = {product};
-      res.render("../views/admin_products", templateVars);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .then(data => {
+        const products = data.rows;
+        const templateVars = { products };
+        res.render("../views/admin_products", templateVars);
+      })
+      .catch(err => {
+        console.log(err);
+      });
 
   })
   // posts to /products to remove an item from the db or just mark as sold
@@ -68,12 +67,12 @@ module.exports = (db) => {
     const val = [deleteItem];
 
     db.query(queryString, val)
-    .then(() => {
-      res.redirect("/admin/products");
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .then(() => {
+        res.redirect("/admin/products");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   });
 
   return router;

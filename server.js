@@ -50,7 +50,7 @@ const adminRoutes = require("./routes/admin");
 // Note: Feel free to replace the example routes below with your own
 
 //homepage
-app.use("/home", homeRoutes(db));
+app.use("/", homeRoutes(db));
 
 //favorites
 app.use("/favorites", favoriteRoutes(db));
@@ -73,9 +73,6 @@ app.use("/login", loginRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  res.render("index");
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
