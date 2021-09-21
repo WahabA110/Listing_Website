@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/layout.css">
+  <!-- External JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- JS File -->
+  <script src="scripts/app.js"></script>
   <title>Messages</title>
 </head>
 
@@ -14,18 +22,19 @@
   <!-- hide form with jquery -->
   <div class="reply-form">
     <form action="/messages" method="POST">
-      <input type="hidden" name="to_user_id">
+      <input class="toInput" type="text" name="to_user_id">
       <input type="text" name="text">
       <button type="submit">Reply</button>
-      <button type="button">Cancel</button>
+      <button class="cancel" type="button">Cancel</button>
     </form>
   </div>
 
   <% for (message of messages) { %>
-    <div>
+    <div class="all-messages-container">
       <h3 class="item--name">
         To: <%= message.to %>
       </h3>
+
       <h3>
         From: <%= message.from %>
       </h3>
@@ -34,8 +43,8 @@
         <%= message.message %>
       </p>
 
-      <input type="hidden" value="<%= message.from %>">
-      <button class="reply" type="button">Reply</button>
+      <input type="hidden" value="<%= message.sender %>">
+      <button class="reply-btn" type="button">Reply</button>
     </div>
     <% } %>
 

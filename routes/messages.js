@@ -36,6 +36,9 @@ module.exports = (db) => {
     const toUser = req.body.to_user_id;
     const text = req.body.text;
 
+    const queryString = `INSERT INTO messages (from_user_id, to_user_id, product_id, message)
+                          VALUES ($1, $2, $3, $4);`
+
   });
 
   return router;
