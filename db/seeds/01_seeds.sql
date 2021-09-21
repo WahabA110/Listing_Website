@@ -17,6 +17,7 @@ VALUES (1, 2, 'scandinavian', 50000, 'description', 'https://image.shutterstock.
 (6, 2, 'pink', 60000, 'description', 'https://image.shutterstock.com/image-illustration/blue-minimalist-living-room-interior-600w-1702134031.jpg', null),
 (7, 1, 'overprice', 80000, 'description', 'https://image.shutterstock.com/image-illustration/interior-living-room-3d-illustration-600w-1315113887.jpg', null),
 (8, 2, 'orange', 20000, 'description', 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1545671903.jpg', '2021-09-05');
+ALTER SEQUENCE products_id_seq RESTART WITH 9;
 
 INSERT INTO messages (message, from_user_id, to_user_id, product_id)
 VALUES ('messages', 5, 2, 8),
