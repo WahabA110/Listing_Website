@@ -13,37 +13,27 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- JS File -->
   <script src="scripts/app.js"></script>
-  <title>Messages</title>
+  <title>Conversations</title>
 </head>
 
 <body>
-  <h1>All Messages <%= userId %> </h1>
+  <h1>All Conversations</h1>
 
-  <!-- hide form with jquery -->
-  <div class="reply-form">
-    <form action="/messages" method="POST">
-      <input class="toInput" type="text" name="to_user_id">
-      <input type="text" name="text">
-      <button type="submit">Reply</button>
-      <button class="cancel" type="button">Cancel</button>
-    </form>
-  </div>
-
-  <% for (message of messages) { %>
+  <% for (data of rows) { %>
     <div class="all-messages-container">
       <h3 class="item--name">
-        To: <%= message.to %> (<%= message.receiver %>)
+        To: <%= data.to %>
       </h3>
 
       <h3>
-        From: <%= message.from %> (<%= message.sender %>)
+        From: <%= data.from %>
       </h3>
 
       <p>
-        <%= message.message %>
+        <%= data.data %>
       </p>
-      <% if (message.sender!=userId) { %>
-        <input type="hidden" value="<%= message.sender %>">
+      <% if (data.sender!=userId) { %>
+        <input type="hidden" value="<%= data.sender %>">
         <button class="reply-btn" type="button">Reply</button>
       <% }%>
 

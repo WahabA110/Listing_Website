@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS messages CASCADE;
 DROP TABLE IF EXISTS favorites CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS conversations CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -21,14 +22,20 @@ CREATE TABLE products (
   sold_date DATE
 );
 
+CREATE TABLE conversations (
+  id SERIAL PRIMARY KEY NOT NULL,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  seller_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY NOT NULL,
   message VARCHAR(255) NOT NULL,
-  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
-  to_user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  from_user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  created timestamp default current_timestamp
 );
-
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL,

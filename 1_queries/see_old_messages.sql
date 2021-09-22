@@ -1,5 +1,8 @@
-SELECT from_user_id as sender, to_user_id as receiver, messages.product_id, messages.message
-FROM messages
-JOIN users to_user ON to_user.id = to_user_id
-JOIN users from_user ON from_user.id = from_user_id
-WHERE messages.from_user_id = 4 OR messages.to_user_id = 4;
+SELECT product_id AS product, user_id AS user, seller_id AS seller, messages.message, messages.created
+FROM conversations
+JOIN messages ON conversation_id=conversations.id;
+
+SELECT * FROM conversations
+JOIN products ON product_id=products.id
+JOIN users ON conversations.user_id=users.id
+WHERE conversations.user_id=5 or seller_id=5;

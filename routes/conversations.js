@@ -5,11 +5,11 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const queryString = `SELECT to_user.name as to, from_user.name as from, from_user_id as sender, to_user_id as receiver, messages.product_id, messages.message
-    FROM messages
-    JOIN users to_user ON to_user.id = to_user_id
-    JOIN users from_user ON from_user.id = from_user_id
-    WHERE messages.from_user_id = $1 OR messages.to_user_id = $2;
+    const queryString = `Select userid.name as to, sellerid.name as from
+    FROM conversations
+    JOIN users userid ON userid.id = user_id
+    JOIN users sellerid ON sellerid.id = seller_id
+    WHERE user_id = $1 OR seller_id=$2;
     `;
 
     const userId = req.session.user_id;
@@ -18,12 +18,13 @@ module.exports = (db) => {
     db.query(queryString, values)
       .then(data => {
 
-        const messages = data.rows;
+        const rows = data.rows;
+        console.log("rows:", rows)
         const templateVars = {
-          messages,
+          rows,
           userId
         };
-        res.render("messages", templateVars);
+        res.render("conversations", templateVars);
       })
       .catch(err => {
         res

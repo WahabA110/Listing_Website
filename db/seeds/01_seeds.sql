@@ -19,15 +19,21 @@ VALUES (1, 2, 'scandinavian', 50000, 'description', 'https://image.shutterstock.
 (8, 2, 'orange', 20000, 'description', 'https://image.shutterstock.com/image-illustration/white-living-room-interior-furniture-600w-1545671903.jpg', '2021-09-05');
 ALTER SEQUENCE products_id_seq RESTART WITH 9;
 
-INSERT INTO messages (message, from_user_id, to_user_id, product_id)
-VALUES ('messages', 5, 2, 8),
-('messages', 4, 1, 3),
-('messages', 8, 1, 2),
-('messages', 3, 2, 5),
-('messages', 5, 1, 7),
-('messages', 4, 2, 2),
-('messages', 7, 2, 5),
-('messages', 5, 2, 5);
+
+INSERT INTO conversations (id, product_id, user_id, seller_id)
+VALUES (1, 6, 7, 2),
+(2, 8, 5, 2),
+(3, 7, 4, 1);
+ALTER SEQUENCE conversations_id_seq RESTART WITH 4;
+
+INSERT INTO messages (message, conversation_id, sender_id)
+VALUES ('messages', 1, 7),
+('messages', 1, 2),
+('messages', 2, 5),
+('messages', 2, 2),
+('messages', 3, 4),
+('messages', 3, 1);
+
 
 INSERT INTO favorites (product_id, user_id)
 VALUES (2, 5),

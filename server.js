@@ -45,6 +45,7 @@ const homeRoutes = require("./routes/home");
 const favoriteRoutes = require("./routes/favorites");
 const messageRoutes = require("./routes/messages");
 const adminRoutes = require("./routes/admin");
+const conversationRoutes = require("./routes/conversations");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -63,6 +64,9 @@ app.use("/admin", adminRoutes(db));
 
 
 app.use("/login", loginRoutes(db));
+
+
+app.use("/conversations", conversationRoutes(db));
 
 
 // app.use("/users", usersRoutes(db));
