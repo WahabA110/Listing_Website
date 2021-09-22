@@ -16,12 +16,14 @@ module.exports = (db) => {
 
     const val = [user_id];
 
-    // console.log(queryString);
-
     db.query(queryString, val)
       .then(data => {
         const products = data.rows;
-        res.json({ products });
+        const templateVars = {
+          products
+        };
+
+        res.render("favorites", templateVars);
       })
       .catch(err => {
         res

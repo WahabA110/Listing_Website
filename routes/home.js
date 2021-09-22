@@ -13,7 +13,12 @@ module.exports = (db) => {
     db.query(queryString)
       .then(data => {
         const products = data.rows;
-        res.json({ products });
+
+        const templateVars = {
+          products
+        };
+
+        res.render("index", templateVars);
       })
       .catch(err => {
         res
