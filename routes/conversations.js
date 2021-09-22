@@ -19,7 +19,6 @@ module.exports = (db) => {
       .then(data => {
 
         const rows = data.rows;
-        console.log("rows:", rows)
         const templateVars = {
           rows,
           userId
@@ -31,16 +30,6 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-  });
-
-  router.post("/", (req, res) => {
-    const fromUser = req.session.userId;
-    const toUser = req.body.to_user_id;
-    const text = req.body.text;
-
-    const queryString = `INSERT INTO messages (from_user_id, to_user_id, product_id, message)
-                          VALUES ($1, $2, $3, $4);`;
-
   });
 
   return router;
