@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "styles.scss",
+        "_admin_products.scss",
+        "_favorites.scss",
+        "_index.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}
