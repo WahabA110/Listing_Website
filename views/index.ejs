@@ -6,37 +6,44 @@
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <!-- CSS File -->
   <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
-
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
 <body>
-  <h1 class="title">Welcome to our listing website</h1>
+  <header class="header">
+    <h1 class="title">Welcome to our listing website</h1>
+  </header>
 
   <% for (item of products) { %>
-    <div>
+    <div class="flex-container">
       <h2 class="item--title">
         <%= item.name %>
       </h2>
-      <div>
+
+      <div class="container">
+
         <img class="item--img" src=" <%= item.thumbnail_photo %> ">
+        <span class="item--price">
+          $<%= item.price %>
+        </span>
         <p class="item--desc">
           <%= item.description %>
         </p>
-        <span class="item--price">
-          <%= item.price %>
-        </span>
+
+        <div class="btn-container">
+          <form method="POST" action="/messages">
+            <button type="submit">Message Seller</button>
+          </form>
+
+          <form action="/favorites" method="post">
+            <button type="submit">Favorite</button>
+          </form>
+        </div>
+
       </div>
-
-      <form method="POST" action="/messages">
-        <button type="submit">Message Owner</button>
-      </form>
-
-      <form action="/favorites" method="post">
-        <button type="submit">Favorite</button>
-      </form>
 
     </div>
 
