@@ -1,16 +1,21 @@
-.fav-container {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: rgb(90, 158, 204);
-  max-width: 1000px;
-  width: 90%;
-  margin:auto;
-
-  .btn-container {
+  .fav-container {
     display: flex;
-    button {
-      margin-right: 5px;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgb(90, 158, 204);
+    max-width: 1000px;
+    width: 90%;
+    margin:auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .btn-container {
+      display: flex;
+      button {
+        margin-right: 5px;
+      }
     }
   }
-}
