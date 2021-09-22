@@ -62,10 +62,10 @@ app.use("/messages", messageRoutes(db));
 // admin posting page
 app.use("/admin", adminRoutes(db));
 
-
+// login route
 app.use("/login", loginRoutes(db));
 
-
+// conversations page
 app.use("/conversations", conversationRoutes(db));
 
 

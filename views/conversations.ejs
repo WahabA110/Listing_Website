@@ -32,10 +32,14 @@
       <p>
         <%= data.data %>
       </p>
-      <% if (data.sender!=userId) { %>
-        <input type="hidden" value="<%= data.sender %>">
-        <button class="reply-btn" type="button">Reply</button>
-      <% }%>
+
+      <a href="/messages/<%= data.to %>">
+        Reply
+      </a>
+
+      <form action="/messages" method="GET">
+        <button class="reply-btn" type="submit">Reply</button>
+      </form>
 
     </div>
     <% } %>

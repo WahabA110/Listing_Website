@@ -32,5 +32,9 @@ module.exports = (db) => {
       });
   });
 
+  // router.post("/", (req, res) => {
+  //   res.redirect('messages');
+  // })
+
   return router;
 };

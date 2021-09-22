@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <h1>All Messages <%= userId %> </h1>
+  <h1>All Messages</h1>
 
   <!-- hide form with jquery -->
   <div class="reply-form">
     <form action="/messages" method="POST">
-      <input class="toInput" type="text" name="to_user_id">
+      <!-- <input class="toInput" type="text" name="to_user_id"> -->
       <input type="text" name="text">
       <button type="submit">Reply</button>
       <button class="cancel" type="button">Cancel</button>
@@ -31,21 +31,18 @@
 
   <% for (message of messages) { %>
     <div class="all-messages-container">
-      <h3 class="item--name">
-        To: <%= message.to %> (<%= message.receiver %>)
-      </h3>
+      <!-- <h3 class="item--name">
+        To: <%=  %>
+      </h3> -->
 
       <h3>
-        From: <%= message.from %> (<%= message.sender %>)
+        From: <%= message.from %>
       </h3>
 
       <p>
         <%= message.message %>
       </p>
-      <% if (message.sender!=userId) { %>
-        <input type="hidden" value="<%= message.sender %>">
-        <button class="reply-btn" type="button">Reply</button>
-      <% }%>
+
 
     </div>
     <% } %>

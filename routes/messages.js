@@ -4,24 +4,30 @@ const router = express.Router();
 
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    const queryString = `SELECT to_user.name as to, from_user.name as from, from_user_id as sender, to_user_id as receiver, messages.product_id, messages.message
+  router.get("/:name", (req, res) => {
+
+    const queryString = `
+    Select message, senderid.name as from, created
     FROM messages
-    JOIN users to_user ON to_user.id = to_user_id
-    JOIN users from_user ON from_user.id = from_user_id
-    WHERE messages.from_user_id = $1 OR messages.to_user_id = $2;
-    `;
+    JOIN users senderid ON senderid.id = sender_id
+    WHERE senderid.name = $1
+    ;`;
 
-    const userId = req.session.user_id;
+    const name = req.params.name
 
-    const values = [userId, userId];
-    db.query(queryString, values)
+    const val = [name];
+
+    // const userId = req.session.user_id;
+
+    db.query(queryString, val)
       .then(data => {
 
         const messages = data.rows;
+        console.log(messages)
+
         const templateVars = {
           messages,
-          userId
+          name
         };
         res.render("messages", templateVars);
       })
@@ -32,15 +38,21 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/", (req, res) => {
-    const fromUser = req.session.userId;
-    const toUser = req.body.to_user_id;
-    const text = req.body.text;
+  // router.post("/", (req, res) => {
+  //   const fromUser = req.session.userId;
+  //   const toUser = req.body.to_user_id;
+  //   const text = req.body.text;
 
-    const queryString = `INSERT INTO messages (from_user_id, to_user_id, product_id, message)
-                          VALUES ($1, $2, $3, $4);`;
+  //   const queryString = `INSERT INTO messages (from_user_id, to_user_id, product_id, message)
+  //                         VALUES ($1, $2, $3, $4);`;
 
-  });
+  // });
 
   return router;
 };
+
+
+// <% if (message.sender!=userId) { %>
+//   <input type="hidden" value="<%= message.sender %>">
+//   <button class="reply-btn" type="button">Reply</button>
+// <% }%>
