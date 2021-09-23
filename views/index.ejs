@@ -20,7 +20,7 @@
 
     <nav>
       <div class="dropdown">
-        <button class="dropbtn">Sort By Price</button>
+        <button class="dropbtn">Sort Price</button>
         <div class="dropdown-content">
           <ul>
           <li><a href="/desc">Most $</a></li>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <ul class="nav-links">
-        <li><a href="/index">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/favorites">Favorites</a></li>
         <li><a href="/conversations">Messages</a></li>
       </ul>
@@ -60,11 +60,11 @@
           </p>
 
           <div class="btn-container">
-            <form method="POST" action="/messages">
+            <form method="POST" action="/conversations/<%= item.id %>">
               <button class="border-btn" type="submit">Message Seller</button>
             </form>
 
-            <form action="/favorites/<%= item.id %>" method="POST">
+            <form action="/<%= item.id %>" method="POST">
               <button class="light-btn" type="submit">Favorite</button>
             </form>
 
