@@ -10,7 +10,7 @@ module.exports = (db) => {
     Select message, senderid.name as from, created, senderid.id, conversation_id
     FROM messages
     JOIN users senderid ON senderid.id = sender_id
-    WHERE senderid.random_id = $1
+    WHERE conversation_id = $1
     ;`;
 
     const random_id = req.params.random_id;
