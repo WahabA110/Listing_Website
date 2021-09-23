@@ -8,7 +8,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 8vh;
+  min-height: 5vh;
   margin-bottom: 20px;
 
   .logo {
@@ -27,12 +27,14 @@ header {
     -webkit-text-fill-color: transparent;
     font-style: italic;
     position: relative;
+    font-size: 1.2rem;
+    padding: 10px 0;
 
     &::after {
       content: "";
       position: absolute;
-      width: 80px;
-      height: 5px;
+      width: 60px;
+      height: 2px;
       border-radius: 15px;
       background-image: linear-gradient(
         to right bottom,
@@ -40,7 +42,7 @@ header {
         rgb(131, 20, 165),
         #fff
       );
-      transform: rotate(-10deg) translate(-85px, 15px);
+      transform: rotate(-10deg) translate(-50px, 10px);
     }
   }
 
@@ -54,13 +56,15 @@ header {
 
       li {
         list-style-type: none;
+        display: flex;
+        align-items: center;
 
         a {
           text-decoration: none;
           color: rgb(69, 79, 165);
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           transition: 0.3s linear;
-          padding: 10px;
+          padding: 0 10px;
 
           &:hover {
             color: rgb(26, 33, 95);

@@ -235,14 +235,18 @@
   max-width: 1000px;
   width: 90%;
   margin: 0 auto 20px;
-  padding: 20px;
+  padding: 25px;
   border-radius: 20px;
 }
 
-.outer-container .fav-container .item--img {
+.outer-container .fav-container .img-container {
   max-width: 500px;
+  min-width: 500px;
+}
+
+.outer-container .fav-container .img-container .item--img {
   width: 100%;
-  min-height: 200px;
+  height: 500px;
 }
 
 .outer-container .fav-container .desc-container {
@@ -312,8 +316,9 @@
 
 .flex-container .container .item--img {
   max-width: 500px;
+  min-width: 500px;
   width: 100%;
-  min-height: 400px;
+  height: 500px;
 }
 
 header {
@@ -334,7 +339,7 @@ header {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-height: 8vh;
+  min-height: 5vh;
   margin-bottom: 20px;
 }
 
@@ -350,18 +355,20 @@ header .logo {
   -webkit-text-fill-color: transparent;
   font-style: italic;
   position: relative;
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
 header .logo::after {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 5px;
+  width: 60px;
+  height: 2px;
   border-radius: 15px;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#361bb1), color-stop(#8314a5), to(#fff));
   background-image: linear-gradient(to right bottom, #361bb1, #8314a5, #fff);
-  -webkit-transform: rotate(-10deg) translate(-85px, 15px);
-          transform: rotate(-10deg) translate(-85px, 15px);
+  -webkit-transform: rotate(-10deg) translate(-50px, 10px);
+          transform: rotate(-10deg) translate(-50px, 10px);
 }
 
 header nav {
@@ -384,15 +391,21 @@ header nav .nav-links {
 
 header nav .nav-links li {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header nav .nav-links li a {
   text-decoration: none;
   color: #454fa5;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 header nav .nav-links li a:hover {
@@ -466,5 +479,9 @@ h3 {
   color: #fff;
   background-color: #6e4ff8;
   border: 2px solid #6e4ff8;
+}
+
+.item--price {
+  color: #6e4ff8;
 }
 /*# sourceMappingURL=styles.css.map */
