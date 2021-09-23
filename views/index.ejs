@@ -23,8 +23,8 @@
         <button class="dropbtn">Sort Price</button>
         <div class="dropdown-content">
           <ul>
-          <li><a href="/desc">Most $</a></li>
-          <li><a href="/asc">Least $</a></li>
+            <li><a href="/desc">Most $</a></li>
+            <li><a href="/asc">Least $</a></li>
           </ul>
         </div>
       </div>
@@ -61,7 +61,7 @@
 
           <div class="btn-container">
             <form method="POST" action="/conversations/<%= item.id %>">
-              <button class="border-btn" type="submit">Message Seller</button>
+              <button id="seller-btn" class="border-btn" type="submit">Message Seller</button>
             </form>
 
             <form action="/<%= item.id %>" method="POST">

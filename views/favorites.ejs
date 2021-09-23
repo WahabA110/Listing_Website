@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.css">
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script src="/scripts/app.js"></script>
   <title>Your Favorites</title>
 </head>
 
@@ -54,7 +56,7 @@
 
 
             <form method="POST" action="/conversations/<%= item.id %>">
-              <button class="border-btn" type="submit">Message Seller</button>
+              <button id="seller-btn" class="border-btn" type="submit">Message Seller</button>
             </form>
 
             <form action="/favorites/delete/<%= item.id %>" method="post">
