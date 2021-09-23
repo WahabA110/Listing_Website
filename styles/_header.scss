@@ -1,6 +1,6 @@
 header {
   background-color:rgb(203, 206, 236);
-  padding: 20px;
+  padding: 0 50px;
   position: sticky;
   top: 0;
   text-transform: capitalize;
@@ -13,10 +13,9 @@ header {
   }
 
   nav {
-    width: 35%;
+    display: flex;
     .nav-links {
       display: flex;
-      justify-content: space-around;
 
       li {
         list-style-type: none;
@@ -26,7 +25,7 @@ header {
           color: rgb(69, 79, 165);
           font-size: 1.5rem;
           transition: 0.3s linear;
-          padding: 5px;
+          padding: 10px;
 
           &:hover {
             color:rgb(26, 33, 95)
@@ -35,7 +34,4 @@ header {
       }
     }
   }
-
-
-
 }

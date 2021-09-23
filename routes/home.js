@@ -52,7 +52,7 @@ module.exports = (db) => {
 
   });
 
-  router.get("/DESC", (req, res) => {
+  router.get("/desc", (req, res) => {
 
     const queryString = `SELECT name, description, thumbnail_photo, price
     FROM products
@@ -77,7 +77,7 @@ module.exports = (db) => {
   });
 
 
-  router.get("/ASC", (req, res) => {
+  router.get("/asc", (req, res) => {
 
     const queryString = `SELECT name, description, thumbnail_photo, price
     FROM products

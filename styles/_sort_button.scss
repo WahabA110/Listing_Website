@@ -1,0 +1,39 @@
+.dropdown {
+  position: relative;
+}
+
+
+.dropbtn {
+  color: #fff;
+  background-color: rgb(110, 79, 248);
+  border: 2px solid rgb(110, 79, 248);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  ul {
+    background-color: #fff;
+    padding: 10px;
+
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+
+      }
+     }
+  }
+
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
