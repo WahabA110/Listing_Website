@@ -13,7 +13,7 @@ body {
   color: rgb(69, 79, 165);
   margin: 0;
   font-size: 2rem;
-  padding: 50px 0 20px;
+  padding: 20px 0;
 }
 
 h3 {
@@ -25,6 +25,7 @@ h3 {
 
 .btn-container {
   display: flex;
+  justify-content: center;
 
   button {
     margin-right: 1rem;

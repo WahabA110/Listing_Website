@@ -17,24 +17,50 @@
 </head>
 
 <body>
-  <h1>All Conversations</h1>
+  <header class="header">
 
-  <% for (data of rows) { %>
-    <div class="all-messages-container">
-      <h3 class="item--name">
-        To: <%= data.to %>
-      </h3>
+    <h1 class="logo">ZWW</h1>
 
-      <h3>
-        From: <%= data.from %>
-      </h3>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn">Sort Price</button>
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="/desc">Most $</a></li>
+            <li><a href="/asc">Least $</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/conversations">Messages</a></li>
+      </ul>
+    </nav>
 
-      <a href="/messages/<%= data.convo_id %>">
-        Reply
-      </a>
+  </header>
 
-    </div>
-    <% } %>
+  <div class="flex-convo-container">
+    <h1>All Conversations</h1>
+
+    <% for (data of rows) { %>
+      <div class="all-messages-container">
+        <h3 class="item--name">
+          To: <%= data.to %>
+        </h3>
+
+        <h3>
+          From: <%= data.from %>
+        </h3>
+
+        <div class="btn-container">
+          <a class="light-btn reply-btn" href="/messages/<%= data.convo_id %>">
+            Reply
+          </a>
+        </div>
+      </div>
+      <% } %>
+  </div>
 
 </body>
 

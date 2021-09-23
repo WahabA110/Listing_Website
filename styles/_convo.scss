@@ -1,0 +1,22 @@
+.flex-convo-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+
+  .all-messages-container {
+    background-color: rgb(203, 206, 236);
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 20px;
+
+    .reply-btn {
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+

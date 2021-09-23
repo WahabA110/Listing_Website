@@ -1,3 +1,69 @@
+.flex-convo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.flex-convo-container .all-messages-container {
+  background-color: #cbceec;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.flex-convo-container .all-messages-container .reply-btn {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  color: #fff;
+  background-color: #6e4ff8;
+  border: 2px solid #6e4ff8;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+}
+
+.dropdown-content ul {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.dropdown-content ul li {
+  list-style-type: none;
+}
+
+.dropdown-content ul li a {
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .flex-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,7 +213,7 @@
 
 header {
   background-color: #cbceec;
-  padding: 20px;
+  padding: 0 50px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -161,6 +227,8 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 5vh;
+  margin-bottom: 20px;
 }
 
 header .logo {
@@ -168,15 +236,15 @@ header .logo {
 }
 
 header nav {
-  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header nav .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 header nav .nav-links li {
@@ -189,7 +257,7 @@ header nav .nav-links li a {
   font-size: 1.5rem;
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
-  padding: 5px;
+  padding: 10px;
 }
 
 header nav .nav-links li a:hover {
@@ -212,7 +280,7 @@ body {
   color: #454fa5;
   margin: 0;
   font-size: 2rem;
-  padding: 50px 0 20px;
+  padding: 20px 0;
 }
 
 h3 {
@@ -226,6 +294,9 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .btn-container button {
