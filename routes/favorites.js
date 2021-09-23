@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -5,7 +6,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const queryString = `SELECT products.name, description, thumbnail_photo, price
+    const queryString = `SELECT products.id, products.name, description, thumbnail_photo, price
     FROM products
     JOIN favorites ON product_id = products.id
     JOIN users ON favorites.user_id = users.id
@@ -31,5 +32,30 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/delete/:id", (req,res) => {
+
+    const user_id = req.session.user_id;
+    const removeItem = req.params.id;
+
+    const queryString = `
+    DELETE FROM favorites
+    WHERE user_id = $1 AND product_id = $2
+    `;
+
+    const val = [user_id, removeItem]
+
+    db.query(queryString, val)
+    .then(() => {
+      res.redirect("/favorites");
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+  })
+
   return router;
 };

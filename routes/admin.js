@@ -75,6 +75,28 @@ module.exports = (db) => {
       });
   });
 
+  router.post("/sold/:id", (req, res) => {
+
+    const itemId = req.params.id;
+
+    const queryString = `
+    UPDATE products
+    SET sold_date = current_timestamp
+    where id = $1
+    `;
+
+    const val = [itemId]
+
+    db.query(queryString, val)
+    .then(() => {
+      res.redirect("/admin/products");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  })
+
   return router;
 };
 

@@ -38,7 +38,7 @@
             <button type="submit">Message Seller</button>
           </form>
 
-          <form action="/favorites" method="post">
+          <form method="POST" action="/favorites/<%= item.id %>">
             <button type="submit">Favorite</button>
           </form>
         </div>
