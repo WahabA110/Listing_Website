@@ -25,7 +25,6 @@ h3 {
 
 .btn-container {
   display: flex;
-  justify-content: center;
 
   button {
     margin-right: 1rem;
@@ -34,12 +33,6 @@ h3 {
     padding: 5px;
     text-transform: capitalize;
     cursor: pointer;
-  }
-
-  .light-btn {
-    color: #fff;
-    background-color: rgb(110, 79, 248);
-    border: 2px solid rgb(110, 79, 248);
   }
 
   .red-btn {
@@ -51,4 +44,10 @@ h3 {
     background-color: #fff;
     border: 2px solid rgb(128, 138, 233);
   }
+}
+
+.light-btn {
+  color: #fff;
+  background-color: rgb(110, 79, 248);
+  border: 2px solid rgb(110, 79, 248);
 }

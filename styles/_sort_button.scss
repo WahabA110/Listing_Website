@@ -2,7 +2,6 @@
   position: relative;
 }
 
-
 .dropbtn {
   color: #fff;
   background-color: rgb(110, 79, 248);
@@ -20,19 +19,20 @@
   width: 100%;
   ul {
     background-color: #fff;
-    padding: 10px;
 
     li {
       list-style-type: none;
+      padding: 10px;
+
+      &:hover {
+        background-color: rgb(203, 206, 236);
+      }
       a {
         text-decoration: none;
-
       }
-     }
+    }
   }
-
 }
-
 
 .dropdown:hover .dropdown-content {
   display: block;

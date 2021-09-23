@@ -18,39 +18,39 @@
 
 <body>
   <header class="header">
-  <h1 class="logo">ZWW</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/favorites">Favorites</a></li>
-      <li><a href="/conversations">Messages</a></li>
-    </ul>
-  </nav>
-</header>
-<div class="messages_reply">
-<h2 class="title">All Messages</h2>
-  <% for (message of messages) { %>
-    <div class="all-messages-container">
+    <h1 class="logo">ZWW</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/conversations">Messages</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="messages_reply">
+    <h2 class="title">All Messages</h2>
+    <% for (message of messages) { %>
+      <div class="all-messages-container">
 
-      <h3>
-        From: <%= message.from %>
-      </h3>
+        <h3>
+          From: <%= message.from %>
+        </h3>
 
-      <p>
-        <%= message.message %>
-      </p>
+        <p>
+          <%= message.message %>
+        </p>
 
-      <span>
-        <%= message.created %>
-      </span>
+        <span class="created-at">
+          <%= message.created %>
+        </span>
 
 
-    </div>
-    <% } %>
-    <form action="/messages/conversations/<%= conversationId %>" method="POST" class="textandbtn">
-      <textarea type="text" name="message" class="replybox"></textarea>
-      <button type="submit" class="replybtn">Reply</button>
-    </form>
+      </div>
+      <% } %>
+        <form action="/messages/conversations/<%= conversationId %>" method="POST" class="textandbtn">
+          <textarea type="text" name="message" class="replybox"></textarea>
+          <button type="submit" class="replybtn">Reply</button>
+        </form>
   </div>
 </body>
 

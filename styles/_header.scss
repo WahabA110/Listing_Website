@@ -1,5 +1,5 @@
 header {
-  background-color:rgb(203, 206, 236);
+  background-color: rgb(203, 206, 236);
   padding: 0 50px;
   position: sticky;
   top: 0;
@@ -7,15 +7,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 5vh;
+  flex-wrap: wrap;
+  min-height: 8vh;
   margin-bottom: 20px;
 
   .logo {
-    color:rgb(69, 79, 165);
+    color: rgb(69, 79, 165);
+    flex: 1 1 500px;
   }
 
   nav {
     display: flex;
+    justify-content: flex-end;
+    flex: 1 1 500px;
+
     .nav-links {
       display: flex;
 
@@ -30,10 +35,20 @@ header {
           padding: 10px;
 
           &:hover {
-            color:rgb(26, 33, 95)
+            color: rgb(26, 33, 95);
           }
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1099px) {
+  header .logo {
+    text-align: center;
+  }
+
+  header nav {
+    justify-content: center;
   }
 }
