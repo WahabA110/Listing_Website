@@ -4,7 +4,7 @@
   width: 90%;
   max-width: 500px;
   margin: auto;
-  background-color:rgb(203, 206, 236);
+  background-color: rgb(203, 206, 236);
   padding: 0px 20px 20px;
   border-radius: 10px;
   text-transform: capitalize;
@@ -20,6 +20,7 @@
     border: 2px solid rgb(110, 79, 248);
     margin: 12px auto 0px;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   label {

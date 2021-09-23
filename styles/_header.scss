@@ -14,6 +14,34 @@ header {
   .logo {
     color: rgb(69, 79, 165);
     flex: 1 1 700px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(54, 27, 177),
+      rgb(131, 20, 165),
+      #fff
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 5px;
+      border-radius: 15px;
+      background-image: linear-gradient(
+        to right bottom,
+        rgb(54, 27, 177),
+        rgb(131, 20, 165),
+        #fff
+      );
+      transform: rotate(-10deg) translate(-85px, 15px);
+    }
   }
 
   nav {
