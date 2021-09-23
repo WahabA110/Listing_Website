@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 module.exports = (db) => {
-  router.get("/:random_id", (req, res) => {
+  router.get("/:convoId", (req, res) => {
 
     const queryString = `
     Select message, senderid.name as from, created, senderid.id, conversation_id
@@ -13,20 +13,21 @@ module.exports = (db) => {
     WHERE conversation_id = $1
     ;`;
 
-    const random_id = req.params.random_id;
+    const convoId = req.params.convoId;
 
-    const val = [random_id];
-
-    // const userId = req.session.user_id;
+    const val = [convoId];
 
     db.query(queryString, val)
       .then(data => {
 
         const messages = data.rows;
+
         const templateVars = {
           messages,
-          conversationId: messages[0].conversation_id
+          conversationId: messages[0].conversation_id,
+          time: messages[0].created
         };
+
         res.render("messages", templateVars);
       })
       .catch(err => {
@@ -46,9 +47,10 @@ module.exports = (db) => {
     const {conversation_id} = req.params;
     const userId = req.session.user_id;
     const val = [message, conversation_id, userId];
+
     db.query(queryString, val)
       .then(() => {
-        res.redirect("/");
+        res.redirect("/conversations");
       })
       .catch(err => {
         res
@@ -56,24 +58,8 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
 
-    //come back to redirect to appropriate place, add a query
   });
 
-  // router.post("/", (req, res) => {
-  //   const fromUser = req.session.userId;
-  //   const toUser = req.body.to_user_id;
-  //   const text = req.body.text;
-
-  //   const queryString = `INSERT INTO messages (from_user_id, to_user_id, product_id, message)
-  //                         VALUES ($1, $2, $3, $4);`;
-
-  // });
 
   return router;
 };
-
-
-// <% if (message.sender!=userId) { %>
-//   <input type="hidden" value="<%= message.sender %>">
-//   <button class="reply-btn" type="button">Reply</button>
-// <% }%>

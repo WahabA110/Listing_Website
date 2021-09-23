@@ -19,21 +19,8 @@
 <body>
   <h1>All Messages</h1>
 
-  <!-- hide form with jquery -->
-  <div class="reply-form">
-    <form action="/messages" method="POST">
-      <!-- <input class="toInput" type="text" name="to_user_id"> -->
-      <input type="text" name="text">
-      <button type="submit">Reply</button>
-      <button class="cancel" type="button">Cancel</button>
-    </form>
-  </div>
-
   <% for (message of messages) { %>
     <div class="all-messages-container">
-      <!-- <h3 class="item--name">
-        To: <%=  %>
-      </h3> -->
 
       <h3>
         From: <%= message.from %>
@@ -42,6 +29,10 @@
       <p>
         <%= message.message %>
       </p>
+
+      <span>
+        <%= message.created %>
+      </span>
 
 
     </div>
