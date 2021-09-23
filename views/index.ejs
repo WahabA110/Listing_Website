@@ -14,7 +14,12 @@
 
 <body>
   <header class="header">
-    <h1 class="title">Welcome to our listing website</h1>
+    <h1 class="title">
+      Best living room furniture in town!
+    </h1>
+
+    <a href="/">Home</a>
+
   </header>
 
   <% for (item of products) { %>
@@ -35,11 +40,11 @@
 
         <div class="btn-container">
           <form method="POST" action="/messages">
-            <button type="submit">Message Seller</button>
+            <button class="border-btn" type="submit">Message Seller</button>
           </form>
 
           <form action="/favorites" method="post">
-            <button type="submit">Favorite</button>
+            <button class="light-btn" type="submit">Favorite</button>
           </form>
         </div>
 
