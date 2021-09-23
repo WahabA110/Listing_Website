@@ -1,4 +1,72 @@
-.flex-container {
+.flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 50px;
+}
+
+.flex-wrapper .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  max-width: 2000px;
+  border: 10px solid #3466a7;
+  border-radius: 20px;
+}
+
+.flex-wrapper .container .item-wrapper {
+  padding: 20px;
+}
+
+.flex-wrapper .container .item-wrapper .item--img {
+  max-width: 500px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.flex-wrapper .container .item-wrapper .item--desc {
+  margin: 10px 0;
+}
+
+.fav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  background-color: #cbceec;
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.fav-container img {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: auto;
+}
+
+.fav-container .desc-container {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,17 +80,85 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 20px auto;
-  width: 90%;
-  max-width: 1000px;
 }
 
-.flex-container .btn-container {
+.fav-container .desc-container .item--desc {
+  margin: 10px 0;
+}
+
+.flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  text-transform: capitalize;
+  border: 10px solid #3466a7;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.flex-container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-container .container .item--desc {
+  margin: 10px 0;
+}
+
+.flex-container .container .item--price {
+  margin-top: 10px;
+}
+
+header {
+  background-color: #cbceec;
+  padding: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-transform: capitalize;
+}
+
+header .title {
+  color: #454fa5;
+  margin: 0;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  background-color: #454fa5;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+header a:hover {
+  background-color: #10185d;
+  -webkit-box-shadow: 2px 2px 5px #57585d;
+          box-shadow: 2px 2px 5px #57585d;
 }
 
 * {
@@ -34,13 +170,44 @@
 
 body {
   overflow-x: hidden;
-}
-
-h1 {
-  color: #454fa5;
+  background-color: #e7e8f0;
 }
 
 h2 {
   color: #252c69;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-container button {
+  margin-right: 1rem;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn-container .light-btn {
+  color: #fff;
+  background-color: #6e4ff8;
+  border: 2px solid #6e4ff8;
+}
+
+.btn-container .red-btn {
+  background-color: #e95e5e;
+  border: 2px solid #e95e5e;
+}
+
+.btn-container .border-btn {
+  background-color: #fff;
+  border: 2px solid #808ae9;
 }
 /*# sourceMappingURL=styles.css.map */

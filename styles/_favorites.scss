@@ -1,21 +1,29 @@
   .fav-container {
     display: flex;
-    justify-content: space-around;
     padding: 10px;
-    background-color: rgb(90, 158, 204);
+    background-color:rgb(203, 206, 236);
     max-width: 1000px;
     width: 90%;
-    margin:auto;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
 
     img {
-      width: 100%;
+      flex-grow: 1;
       height: auto;
     }
 
-    .btn-container {
+    .desc-container {
+      flex-grow: 1;
       display: flex;
-      button {
-        margin-right: 5px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .item--desc {
+        margin: 10px 0;
       }
+
     }
+
   }
