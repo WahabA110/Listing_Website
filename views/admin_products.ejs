@@ -13,19 +13,29 @@
 <body>
 
   <header class="header">
-    <h1 class="title">Your Store</h1>
 
-    <a href="/">Home</a>
+    <h1 class="logo">ZWW</h1>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/index">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/conversations">Messages</a></li>
+      </ul>
+    </nav>
 
   </header>
+
   <div class="flex-wrapper">
+    <h2 class="title">Your Store</h2>
+
     <div class="container">
       <% for (item of products) { %>
 
         <div class="item-wrapper">
-          <h2>
+          <h3>
             <%= item.name %>
-          </h2>
+          </h3>
 
           <div class="img-container">
             <img class="item--img" src=" <%= item.thumbnail_photo %> ">

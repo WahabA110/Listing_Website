@@ -1,8 +1,9 @@
 .flex-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px;
+  // margin: 50px;
 
   .container {
     display: flex;
@@ -13,15 +14,20 @@
     max-width: 2000px;
     border: 10px solid rgb(52, 102, 167);
     border-radius: 20px;
+    padding: 20px;
 
     .item-wrapper {
-      padding: 20px;
+      max-width: 500px;
+      padding: 10px;
 
-      .item--img {
-        max-width: 500px;
-        width: 100%;
-        min-height: 500px;
+      .img-container {
+        min-width: 500px;
+        .item--img {
+          width: 100%;
+          height: 500px;
+        }
       }
+
 
       .item--desc {
         margin: 10px 0;
