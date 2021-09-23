@@ -5,7 +5,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const queryString = `Select userid.name as to, sellerid.name as from, sellerid.random_id, sellerid.id
+    const queryString = `Select userid.name as to, sellerid.name as from, sellerid.random_id, userid.random_id, sellerid.id
     FROM conversations
     JOIN users userid ON userid.id = user_id
     JOIN users sellerid ON sellerid.id = seller_id
