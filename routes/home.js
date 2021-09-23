@@ -5,11 +5,12 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const queryString = `SELECT name, description, thumbnail_photo, price
+
+    const queryString = `SELECT *
     FROM products
     WHERE sold_date IS NULL
     ORDER BY name`;
-    console.log(queryString);
+
     db.query(queryString)
       .then(data => {
         const products = data.rows;
@@ -26,5 +27,30 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/favorites/:id", (req, res) => {
+
+    const queryString = `
+    INSERT INTO favorites (user_id, product_id)
+    VALUES ($1, $2)
+    `;
+
+    const currentUser = req.session.user_id;
+    const favoriteItem = req.params.id;
+
+    const val = [currentUser, favoriteItem];
+
+    db.query(queryString, val)
+    .then(() => {
+      res.redirect('/favorites');
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+  })
+
   return router;
 };

@@ -43,9 +43,10 @@
             <button class="border-btn" type="submit">Message Seller</button>
           </form>
 
-          <form action="/favorites" method="post">
+          <form action="/favorites/<%= item.id %>" method="POST">
             <button class="light-btn" type="submit">Favorite</button>
           </form>
+
         </div>
 
       </div>
