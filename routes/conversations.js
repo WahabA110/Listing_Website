@@ -15,7 +15,10 @@ module.exports = (db) => {
     const userId = req.session.user_id;
 
     const values = [userId, userId];
-
+    if (!userId) {
+      res.send("Please login/register first <a href='/'>Go Back<a>");
+      return;
+    }
     db.query(queryString, values)
       .then(data => {
 

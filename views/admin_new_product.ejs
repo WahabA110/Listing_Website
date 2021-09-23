@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
   <title>Document</title>
 </head>
+
 <body>
+
+  <header class="header">
+    <h1 class="logo">ZWW</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/conversations">Messages</a></li>
+        <li><a href="/admin/products">Products</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
   <form action="/admin/new" method="POST">
-    <input name="name">
-    <input name="price">
-    <input name="description">
-    <input name="thumbnail_photo">
-    <button type="submit">Button</button>
+    <div class="new--container">
+      <h2 class="title">New Listing</h2>
+      <label>name</label>
+      <input name="name">
+      <label>price</label>
+      <input name="price">
+      <label>description</label>
+      <input name="description">
+      <label>photo</label>
+      <input name="thumbnail_photo">
+      <button type="submit">Button</button>
+    </div>
   </form>
 </body>
+
 </html>
