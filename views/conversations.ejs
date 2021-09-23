@@ -33,13 +33,9 @@
         <%= data.data %>
       </p>
 
-      <a href="/messages/<%= data.to %>">
+      <a href="/messages/<%= data.random_id %>">
         Reply
       </a>
-
-      <form action="/messages" method="GET">
-        <button class="reply-btn" type="submit">Reply</button>
-      </form>
 
     </div>
     <% } %>

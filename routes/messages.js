@@ -4,18 +4,18 @@ const router = express.Router();
 
 
 module.exports = (db) => {
-  router.get("/:name", (req, res) => {
+  router.get("/:random_id", (req, res) => {
 
     const queryString = `
-    Select message, senderid.name as from, created
+    Select message, senderid.name as from, created, senderid.id, conversation_id
     FROM messages
     JOIN users senderid ON senderid.id = sender_id
-    WHERE senderid.name = $1
+    WHERE senderid.random_id = $1
     ;`;
 
-    const name = req.params.name
+    const random_id = req.params.random_id;
 
-    const val = [name];
+    const val = [random_id];
 
     // const userId = req.session.user_id;
 
@@ -23,11 +23,9 @@ module.exports = (db) => {
       .then(data => {
 
         const messages = data.rows;
-        console.log(messages)
-
         const templateVars = {
           messages,
-          name
+          conversationId: messages[0].conversation_id
         };
         res.render("messages", templateVars);
       })
@@ -36,6 +34,29 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
+  });
+
+  router.post("/conversations/:conversation_id", (req, res) => {
+    const queryString = `
+    INSERT INTO messages (message, conversation_id, sender_id)
+    VALUES ($1, $2, $3);
+    `;
+
+    const {message} = req.body;
+    const {conversation_id} = req.params;
+    const userId = req.session.user_id;
+    const val = [message, conversation_id, userId];
+    db.query(queryString, val)
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+
+    //come back to redirect to appropriate place, add a query
   });
 
   // router.post("/", (req, res) => {

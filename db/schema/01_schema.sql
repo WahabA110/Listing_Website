@@ -9,7 +9,8 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   phone_number VARCHAR(10),
-  is_admin BOOLEAN
+  is_admin BOOLEAN,
+  random_id VARCHAR(6) NOT NULL
 );
 
 CREATE TABLE products (

@@ -46,7 +46,10 @@
 
     </div>
     <% } %>
-
+    <form action="/messages/conversations/<%= conversationId %>" method="POST">
+      <input type="text" name="message">
+      <button type="submit">Reply</button>
+    </form>
 </body>
 
 </html>
