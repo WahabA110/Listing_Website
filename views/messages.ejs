@@ -17,8 +17,18 @@
 </head>
 
 <body>
-  <h1>All Messages</h1>
-
+  <header class="header">
+  <h1 class="logo">ZWW</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/favorites">Favorites</a></li>
+      <li><a href="/conversations">Messages</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="messages_reply">
+<h2 class="title">All Messages</h2>
   <% for (message of messages) { %>
     <div class="all-messages-container">
 
@@ -37,10 +47,11 @@
 
     </div>
     <% } %>
-    <form action="/messages/conversations/<%= conversationId %>" method="POST">
-      <input type="text" name="message">
-      <button type="submit">Reply</button>
+    <form action="/messages/conversations/<%= conversationId %>" method="POST" class="textandbtn">
+      <textarea type="text" name="message" class="replybox"></textarea>
+      <button type="submit" class="replybtn">Reply</button>
     </form>
+  </div>
 </body>
 
 </html>
