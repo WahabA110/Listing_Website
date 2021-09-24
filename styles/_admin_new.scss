@@ -1,0 +1,28 @@
+.new--container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  background-color:rgb(203, 206, 236);
+  padding: 0px 20px 20px;
+  border-radius: 10px;
+  text-transform: capitalize;
+
+  h2 {
+    text-align: center;
+  }
+
+  button {
+    width: 150px;
+    color: #fff;
+    background-color: rgb(110, 79, 248);
+    border: 2px solid rgb(110, 79, 248);
+    margin: 12px auto 0px;
+    border-radius: 5px;
+  }
+
+  label {
+    margin: 4px;
+  }
+}

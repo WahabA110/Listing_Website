@@ -11,12 +11,15 @@ module.exports = (db) => {
     WHERE sold_date IS NULL
     ORDER BY name`;
 
+    const currentUser = req.session.user_id;
+
     db.query(queryString)
       .then(data => {
         const products = data.rows;
 
         const templateVars = {
-          products
+          products,
+          currentUser
         };
 
         res.render("index", templateVars);
@@ -54,17 +57,20 @@ module.exports = (db) => {
 
   router.get("/desc", (req, res) => {
 
-    const queryString = `SELECT name, description, thumbnail_photo, price
+    const queryString = `SELECT *
     FROM products
     WHERE sold_date IS NULL
     ORDER BY price DESC;`;
+
+    const currentUser = req.session.user_id
 
     db.query(queryString)
       .then(data => {
         const products = data.rows;
         console.log(data.rows)
         const templateVars = {
-          products
+          products,
+          currentUser
         };
 
         res.render("index", templateVars);
@@ -79,16 +85,19 @@ module.exports = (db) => {
 
   router.get("/asc", (req, res) => {
 
-    const queryString = `SELECT name, description, thumbnail_photo, price
+    const queryString = `SELECT *
     FROM products
     WHERE sold_date IS NULL
     ORDER BY price;`;
+
+    const currentUser = req.session.user_id
 
     db.query(queryString)
       .then(data => {
         const products = data.rows;
         const templateVars = {
-          products
+          products,
+          currentUser
         };
 
         res.render("index", templateVars);
