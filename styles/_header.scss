@@ -13,13 +13,13 @@ header {
 
   .logo {
     color: rgb(69, 79, 165);
-    flex: 1 1 500px;
+    flex: 1 1 700px;
   }
 
   nav {
     display: flex;
     justify-content: flex-end;
-    flex: 1 1 500px;
+    flex: 1 1 700px;
 
     .nav-links {
       display: flex;
@@ -43,12 +43,13 @@ header {
   }
 }
 
-@media only screen and (max-width: 1099px) {
+@media only screen and (max-width: 1499px) {
   header .logo {
     text-align: center;
   }
 
   header nav {
     justify-content: center;
+    padding-bottom: 10px;
   }
 }
