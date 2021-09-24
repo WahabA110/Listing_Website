@@ -29,9 +29,8 @@ module.exports = (db) => {
     const val = [user_id, product_name, product_price, product_description, product_photo];
 
     db.query(queryString, val)
-      .then(data => {
-        const new_product = data.rows;
-        res.json(new_product);
+      .then(() => {
+        res.redirect("/");
       })
       .catch(err => {
         console.log(err);
