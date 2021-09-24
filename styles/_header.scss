@@ -16,15 +16,16 @@ header {
     flex: 1 1 700px;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
-
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(54, 27, 177),
-      rgb(131, 20, 165),
-      #fff
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // if navigating page on chrome comment out everything below this
+    // background-image: linear-gradient(
+    //   to right bottom,
+    //   rgb(54, 27, 177),
+    //   rgb(131, 20, 165),
+    //   #fff
+    // );
+    // background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // and above this
     font-style: italic;
     position: relative;
     font-size: 1.2rem;

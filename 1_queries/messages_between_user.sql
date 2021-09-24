@@ -1,5 +1,3 @@
-
-
 SELECT message, sender_id, created
 FROM messages
 JOIN users ON users.id = messages.sender_id;
